@@ -4,18 +4,18 @@ public class SpacedLogger implements Logger{
 	
 	@Override
 	public void log(String log) {
-		String newString = "";
+		StringBuilder newString = new StringBuilder();
 		for (int i = 0; i < log.length(); i++) {
-			newString += log.charAt(i) + " ";
-			}
-		System.out.println(newString);
+			newString.append(log.charAt(i) + " ");
 		}
+		System.out.println(newString.toString());
+	}
 
 	@Override
 	public void error(String error) {
-		String newString = "";
+		StringBuilder newString = new StringBuilder();;
 		for (int i = 0; i < error.length(); i++) {
-			newString += error.charAt(i) + " ";
+			newString.append(error.charAt(i) + " ");
 			}
 		System.out.println("ERROR: " + newString);
 	}
